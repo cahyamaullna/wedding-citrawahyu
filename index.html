@@ -29,7 +29,9 @@
         <div class="background d-flex align-items-center justify-content-center">
             <div class="text-center">
                 <span class="text-white">The Wedding of</span>
-                <p>Citra & Wahyu</p>
+                <p style="font-size: 45px;">Citra & Wahyu</p>
+                <span class="d-block text-light">Yth :</span>
+                <p id="name"></p>
                 <button class="btn" onclick="togglePlay()">Open invitation</button>
             </div>
         </div>
@@ -247,10 +249,24 @@
         <p>terimakasih</p>
     </div>
     <!-- Script -->
+
+    <script>
+        const el = document.getElementById('name')
+        // console.log("window Location:", window.location);
+        const myKeysValues = window.location.search;
+        // console.log("Keys & Values:", myKeysValues);
+
+        const urlParams = new URLSearchParams(myKeysValues);
+        const param1 = urlParams.get('name');
+        el.innerHTML = param1
+
+        console.log("Name:", param1);
+    </script>
+
     <script>
         var myAudio = document.getElementById("myAudio")
         var isPlaying = false
-        console.log(myAudio);
+        // console.log(myAudio);
         function togglePlay(){
             myAudio.play();
             terakhir = document.getElementById("box");
@@ -258,20 +274,10 @@
         }
     </script>
     <script src="./asset/script/index.js"></script>
-
-
-
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init();
     </script>
-
-
-
-
-
-
-
 
     <!-- Optional JavaScript; choose one of the two! -->
 
