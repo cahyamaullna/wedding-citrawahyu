@@ -31,7 +31,7 @@
                 <span class="text-white">The Wedding of</span>
                 <p style="font-size: 45px;">Citra & Wahyu</p>
                 <span class="d-block text-light">Yth :</span>
-                <p id="name"></p>
+                <p id="name" class="text-capitalize"></p>
                 <button class="btn" onclick="togglePlay()">Open invitation</button>
             </div>
         </div>
@@ -258,7 +258,13 @@
 
         const urlParams = new URLSearchParams(myKeysValues);
         const param1 = urlParams.get('name');
-        el.innerHTML = param1
+        console.log(param1);
+        if (param1 === null) {
+            el.innerHTML = "Bpk/Ibu"
+        }else{
+            el.innerHTML = param1
+
+        }
 
         console.log("Name:", param1);
     </script>
